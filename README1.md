@@ -114,7 +114,7 @@ $ yarn install
 $ yarn dev
 ```
 
-
+如果你使用的是VSCode，推荐安装 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 设置远程仓库 为Mini App config 文件中的 `github_repo.repo_url`
 
