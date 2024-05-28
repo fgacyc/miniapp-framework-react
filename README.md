@@ -1,3 +1,10 @@
+<div align="center">
+    <H1 align="center">FGA Mobile Mini App Framework</H1>
+    <a href="README.md">English</a>
+    <span> | </span>
+    <a href="README_CN.md">中文</a>
+</div>
+
 # 1 Introduction
 
 FGA Mobile Mini App Framework is a front-end product solution, implemented based on React, using the latest technology stack, built-in i18n solutions, dynamic routing, UI framework, status management, analysis tools and other rich functional components, which can quickly Help you build a Mini App product prototype.
