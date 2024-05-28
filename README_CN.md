@@ -403,8 +403,7 @@ export default function Index(){
 ```
 
 
-# 12.数据库与数据请求
-## 12.1 数据库
+# 12.数据库 
 在FGA IT 系统中，我们统一使用了PostgreSQL 数据库，你可以通过提供的数据库信息来连接数据库，进行数据的读写操作。
 在Mini App config json 文件中，提供了数据库的连接信息。
 
