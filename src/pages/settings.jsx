@@ -1,11 +1,14 @@
 import Block from "@/components/block.jsx";
 import {NavBar, Switch, Radio, Space, Input} from "antd-mobile";
 import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useSettingsStore} from "@/store/settings-store.js";
 
 export default function Settings(){
     const navigate = useNavigate();
-    const [value,setValue] = useState('');
+    const [isDarkMode,toggleDarkMode] = useSettingsStore(state => [state.isDarkMode,state.toggleDarkMode])
+    const [radioValue,setRadioValue] = useSettingsStore(state => [state.radioValue,state.setRadioValue])
+    const [inputValue,setInputValue] = useSettingsStore(state => [state.inputValue,state.setInputValue])
 
     return (
         <div>
@@ -15,12 +18,16 @@ export default function Settings(){
             <Block>
                 <div className={"py-2 flex flex-row justify-between items-center"}>
                     <div className={"text-base"}>Dark Mode</div>
-                    <Switch/>
+                    <Switch checked={isDarkMode} onChange={toggleDarkMode}/>
                 </div>
             </Block>
 
             <Block>
-                <Radio.Group defaultValue='1'>
+                <Radio.Group defaultValue={radioValue}
+                                onChange={val => {
+                                    setRadioValue(val)
+                                }}
+                >
                     <Space direction='vertical'>
                         <Radio value='1'>Item 1</Radio>
                         <Radio value='2'>Item 2</Radio>
@@ -32,9 +39,9 @@ export default function Settings(){
             <Block title='Input'>
                 <Input
                     placeholder='Please input something'
-                    //value={value}
+                    value={inputValue}
                     onChange={val => {
-                        setValue(val)
+                        setInputValue(val)
                     }}
                 />
             </Block>

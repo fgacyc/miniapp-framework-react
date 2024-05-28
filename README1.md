@@ -95,11 +95,24 @@ package 参数解释：
 
 
 # 4. 开发
+打开FGA Mobile Mini App Framework 项目： https://github.com/fgacyc/miniapp-framework-react
+然后使用项目目标创建新的储存库，之后克隆新的储存库到本地。
 
-下载框架代码
+1. 使用模板创建项目
+
+![](src/assets/README/new-repo.png)
+
+2. 创建新的储存库
+
+<img src="src/assets/README/create-repo.png" WIDTH="500">
+<img src="src/assets/README/new-framework-repo.png" WIDTH="500">
+<img src="src/assets/README/new-framework-repo1.png" WIDTH="500">
+
+
+3. 下载框架代码
 
 ```bash
-$ git clone 
+$ git clone <your-repo-url>
 ```
 
 安装依赖
@@ -115,12 +128,6 @@ $ yarn dev
 ```
 
 如果你使用的是VSCode，推荐安装 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-设置远程仓库 为Mini App config 文件中的 `github_repo.repo_url`
-
-```bash
-$ 
-```
 
 
 
@@ -198,17 +205,6 @@ export default function Index(){
 
 # 7. 页面样式
 页面样式可以参考mobile UI 设计： https://www.figma.com/design/4fWKR6XFtLrQbbdq1NSJmY/FGA-MobileApp
-
-基础组件样式
-button
-
-
-modal
-
-
-input
-
-#TODO： 写一个组件页面，展示所有的基础组件样式
 
 
 # 8. 图标
@@ -410,9 +406,24 @@ export default function Index(){
 # 12.数据库与数据请求
 ## 12.1 数据库
 在FGA IT 系统中，我们统一使用了PostgreSQL 数据库，你可以通过提供的数据库信息来连接数据库，进行数据的读写操作。
-```javascript
+在Mini App config json 文件中，提供了数据库的连接信息。
 
+```json
+{
+  "database": {
+    "username": "fgacyc.official",
+    "password": "Basdas32543oeAW",
+    "host": "ep-raspy-sun-45651351.ap-southeast-1.aws.neon.tech",
+    "port": "5432",
+    "database": "test",
+    "connect_string": "postgresql://fgacyc.official:Basdas32543oeAW@ep-raspy-sun-45651351.ap-southeast-1.aws.neon.tech:5432/test"
+  }
+}
 ```
+你可以通过如下的PostgreSQL GUI 工具来连接和操作数据库：
+* [DBeaver](https://dbeaver.io/)
+* [pgAdmin](https://www.pgadmin.org/)
+* [DataGrip](https://www.jetbrains.com/datagrip/)
 
 # 13. 底部菜单
 底部菜单是Mini App的提供的一个功能，位于 `src/components/action-sheet-menu.jsx` 可以通过底部菜单来实现一些功能，
@@ -513,6 +524,11 @@ const buttonsData = [
   </body>
 </html>
 ```
+
+# 17. 问题
+## 17.1 如何使用应用设置
+在Mini App中，我们提供了一个设置页面 `src/pages/settings.jsx` ，可以通过设置页面来设置一些Mini App的配置.
+并且有一个全局状态 `useSettingsStore` 来存储这些配置(位于`src/store/settings-store.js`)，可以通过这个状态来读取和修改配置。
 
 
 
