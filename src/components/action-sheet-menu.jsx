@@ -162,7 +162,12 @@ export default  function ActionSheetMenu(){
             ${showMenu ? 'transition-transform translate-y-0' : 'transition-transform translate-y-full'}`}>
                 <div className={`flex flex-col border shadow-lg rounded-t-3xl bg-white`}>
                     <div className={"text-center p-3 border-b "}>
-                        {capitalizeAllFirstLetters(config.name)}
+                        {
+                            lang === 'zh' && config.name_zh
+                        }
+                        {
+                            lang === 'en' && capitalizeAllFirstLetters(config.name)
+                        }
                     </div>
                     <div className={"grid grid-cols-4 gap-2 p-4 w-full"}>
                         {buttonsData.map((button, index) => (
