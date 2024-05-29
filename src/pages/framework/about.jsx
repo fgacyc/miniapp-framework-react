@@ -12,6 +12,7 @@ import {useUserStore} from "@/store/user-store.js";
 export default function About() {
     const navigate = useNavigate();
     const { t } = useTranslation();
+    const lang = useUserStore(state => state.language);
 
     return (
         <div>
@@ -21,7 +22,12 @@ export default function About() {
             <div className={"flex flex-col items-center p-8 bg-white mb-2"}>
                 <img src="/app_icon.png" alt="app logo" className={"w-16 rounded-full"}/>
                 <h1 className={"text-black text-xl text-center mt-4"}>
-                    {capitalizeAllFirstLetters(config.name)}
+                    {
+                        lang === 'zh' && config.name_zh
+                    }
+                    {
+                        lang === 'en' && capitalizeAllFirstLetters(config.name)
+                    }
                 </h1>
             </div>
 
