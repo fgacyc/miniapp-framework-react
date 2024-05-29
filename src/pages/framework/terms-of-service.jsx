@@ -58,7 +58,7 @@ export default function TermsOfService() {
                         <p className="mb-4">我们保留在我们自己的全权决定权下随时修改或替换这些条款的权利。如果修订是重大的，我们将在任何新条款生效之前至少提供30天的通知。什么构成重大变化将由我们自行决定。</p>
 
                         <h2 className="text-xl font-semibold mb-2">11. 联系我们</h2>
-                        <p>如果您对这些条款有任何疑问，请联系我们：<a href="mailto:fgacyc.technology@gmail.com"
+                        <p>如果您对这些条款有任何疑问，请联系我们：<a href="#"
                                                                     className="text-blue-500">fgacyc.technology@gmail.com</a>。
                         </p>
                         <div className={"h-10"}></div>

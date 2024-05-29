@@ -14,6 +14,7 @@ import {capitalizeAllFirstLetters} from "./tools.js";
 import {useUserStore} from "@/store/user-store.js";
 import {useTranslation} from "react-i18next";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 function ActionSheetButton({title, icon,onClick}){
 
@@ -85,6 +86,7 @@ export default  function ActionSheetMenu(){
     const buttonStyle = "w-[28px] h-[28px]";
     const {t} =  useTranslation();
     const [devModal, setDevModal] = useState(false);
+    const navigate = useNavigate();
 
 
     const buttonsData = [
@@ -113,17 +115,23 @@ export default  function ActionSheetMenu(){
         {
             title: t("Settings"),
             icon: <GoGear className={buttonStyle}/>,
-            onClick: () => window.open('/settings', "_self")
+            onClick: () => {
+                setShowMenu(false);
+                navigate('/settings');
+            }
         },
         {
             title: t("Profile"),
             icon: <GoPerson className={buttonStyle}/>,
-            onClick:()=>window.open('https://fga-accounts-center.pages.dev/',"_self")
+            onClick:()=>window.open(`https://fga-accounts-center.pages.dev/?token=${token}&&language=${lang}`,"_self")
         },
         {
             title: t("About"),
             icon: <GoInfo className={buttonStyle}/>,
-            onClick: () => window.open('/about', "_self")
+            onClick: () => {
+                setShowMenu(false);
+                navigate('/about');
+            }
         },
         {
             title: t("Share"),

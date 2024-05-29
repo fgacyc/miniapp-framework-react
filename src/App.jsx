@@ -13,11 +13,12 @@ function App() {
     }, [initUser]);
     return (
         <>
-            <ActionSheetButtons />
             <Router>
+                <ActionSheetButtons />
+                <ActionSheetMenu />
                 <MainRoutes />
             </Router>
-            <ActionSheetMenu />
+
         </>
 
     );

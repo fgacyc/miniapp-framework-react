@@ -176,7 +176,7 @@ export default function PrivacyPolicy() {
 
                         <h2 className="text-xl font-semibold mb-2">8. Contact Us</h2>
                         <p>If you have any questions about this Privacy Policy, please contact us at <a
-                            href="mailto:fgacyc.technology@gmail.com"
+                            href="#"
                             className="text-blue-500">fgacyc.technology@gmail.com</a>.
                         </p>
                         <div className={"h-10"}></div>

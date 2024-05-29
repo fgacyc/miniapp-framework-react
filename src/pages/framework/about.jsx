@@ -7,6 +7,7 @@ import githubLogo from '@/assets/github.png'
 import instagramLogo from '@/assets/instagram.png'
 import {capitalizeAllFirstLetters} from "@/components/tools.js";
 import {useTranslation} from "react-i18next";
+import {useUserStore} from "@/store/user-store.js";
 
 export default function About() {
     const navigate = useNavigate();
@@ -26,16 +27,16 @@ export default function About() {
 
             <Block>
                 <div className={"flex justify-between items-center"}>
-                    <div>Version: V{config.version}</div>
+                    <div>{t("Version")}: V{config.version}</div>
                     <div className={"bg-gray-100 px-1 py-[1px] rounded text-gray-600"}>
-                        Latest Version
+                        {t("Latest Version")}
                     </div>
                 </div>
             </Block>
 
             <Block>
                 <div className={"flex justify-between items-center"}>
-                    <div>Developer: {config.author}</div>
+                    <div>{t("Developer")}: {config.author}</div>
                     <div className={"flex"}>
                         {
                             config.instagram && <a href={config.instagram} className={"px-2"}>
@@ -56,14 +57,14 @@ export default function About() {
                 <div className={"pb-2 flex flex-row justify-between  items-center"}
                     onClick={() => navigate('/terms-of-service')}
                 >
-                    <div>Terms of Service</div>
+                    <div>{t("Terms of Service")}</div>
                     <GoChevronRight className={"w-[18px] h-[18px]"}/>
                 </div>
                 <hr/>
                 <div className={"pt-2 flex flex-row justify-between items-center"}
                     onClick={() => navigate('/privacy-policy')}
                 >
-                    <div >Privacy Policy</div>
+                    <div>{t("Privacy Policy")}</div>
                     <GoChevronRight className={"w-[18px] h-[18px]"}/>
                 </div>
             </Block>
