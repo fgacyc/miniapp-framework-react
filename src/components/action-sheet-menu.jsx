@@ -140,7 +140,7 @@ export default  function ActionSheetMenu(){
             onClick: !config.shared ? null : () => navigator.clipboard.writeText(window.location.href)
         },
         {
-            title: "Dev",
+            title: t("DEV"),
             icon: <GoTools className={buttonStyle}/>,
             onClick: () => {
                 setDevModal(true);
