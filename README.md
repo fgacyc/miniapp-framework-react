@@ -535,3 +535,11 @@ Please add this snippet to the index.html of your Mini App so that you can view 
 ## 17.1 How to use application settings
 In Mini App, we provide a settings page `src/pages/settings.jsx`, through which you can set some Mini App configurations.
 And there is a global state `useSettingsStore` to store these configurations (located in `src/store/settings-store.js`), and the configuration can be read and modified through this state.
+## 17.2 How to read ENV variables 
+To prevent accidentally leaking env variables to the client, only variables prefixed with VITE_ are exposed
+```
+VITE_SOME_KEY=123
+```
+```
+console.log(import.meta.env.VITE_SOME_KEY) // "123"
+```
