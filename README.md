@@ -210,8 +210,46 @@ export default function Index(){
 ```
 
 
-# 7. Page style
-For page style, please refer to mobile UI design: https://www.figma.com/design/4fWKR6XFtLrQbbdq1NSJmY/FGA-MobileApp
+## 7.1 UI Components
+### 7.1.1 navigation bar
+![](src/assets/README/navbar.png)
+```javascript
+import NavBar from "@/pages/framework/nav-bar.jsx";
+
+export default function About(){
+     return (
+         <div>
+             <NavBar ifShowBackArrow={true} url="">{t("About")}</NavBar ifShowBackArrow={true} url="">
+         </div>
+     )
+}
+```
+API:
+ifShowBackArrow: Whether to display the back button
+url: Back button jump address!
+
+## 7.2  Ant Design Mobile UI components
+### 7.2.1 choose component
+Visit: https://mobile.ant.design/zh/components/button
+
+### 7.2.2 use component
+```javascript
+import { DemoBlock } from 'demos'
+
+ 
+export default function Home() {
+  return (
+    <div>
+        <Button color='primary' fill='solid'>
+            Click me
+        </Button>
+    </div>
+  )
+}
+```
+
+See `@page/framework/settings.js` for more  Ant Design Mobile UI components and usage examples.
+
 
 
 # 8. Icon
