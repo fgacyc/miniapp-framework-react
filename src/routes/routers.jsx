@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Index from "../pages/framework/index.jsx";
+import Index from "../pages/index.jsx";
 import About from "../pages/framework/about.jsx";
 import Settings from "@/pages/framework/settings.jsx";
 import PrivacyPolicy from "@/pages/framework/privacy-policy.jsx";
