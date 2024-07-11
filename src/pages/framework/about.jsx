@@ -1,13 +1,13 @@
 import config from "../../../package.json";
 import {GoChevronRight} from "react-icons/go";
 import {useNavigate} from "react-router-dom";
-import {NavBar} from "antd-mobile";
 import Block from "@/components/block.jsx";
 import githubLogo from '@/assets/github.png'
 import instagramLogo from '@/assets/instagram.png'
 import {capitalizeAllFirstLetters} from "@/components/tools.js";
 import {useTranslation} from "react-i18next";
 import {useUserStore} from "@/store/user-store.js";
+import NavBar from "@/pages/framework/nav-bar.jsx";
 
 export default function About() {
     const navigate = useNavigate();
@@ -16,9 +16,7 @@ export default function About() {
 
     return (
         <div>
-            <NavBar onBack={() => navigate(-1)}
-                    className={"bg-white"}
-            >{t("About")}</NavBar>
+            <NavBar ifShowBackArrow={true}>{t("About")}</NavBar>
             <div className={"flex flex-col items-center p-8 bg-white mb-2"}>
                 <img src="/app_icon.png" alt="app logo" className={"w-16 rounded-full"}/>
                 <h1 className={"text-black text-xl text-center mt-4"}>

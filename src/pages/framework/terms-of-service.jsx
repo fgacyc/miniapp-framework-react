@@ -1,19 +1,16 @@
-import {NavBar} from "antd-mobile";
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {useUserStore} from "@/store/user-store.js";
+import NavBar from "@/pages/framework/nav-bar.jsx";
 
 
 export default function TermsOfService() {
-    const navigate = useNavigate();
     const {t} = useTranslation();
     const language = useUserStore(state => state.language)
 
     return (
         <div>
-            <NavBar onBack={() => navigate(-1)}
-                    className={"bg-white"}
-            >{t("Terms of Service")}</NavBar>
+            <NavBar ifShowBackArrow={true}>{t("Terms of Service")}</NavBar>
             {
                 language === "zh"
                     ? <div className="bg-white rounded-lg shadow-md p-8 h-screen overflow-y-scroll">
