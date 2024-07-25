@@ -214,7 +214,7 @@ export default function Index(){
 ### 7.1.1 navigation bar
 ![](src/assets/README/navbar.png)
 ```javascript
-import NavBar from "@/pages/framework/nav-bar.jsx";
+import NavBar from "@/components/nav-bar.jsx";
 
 export default function About(){
      return (

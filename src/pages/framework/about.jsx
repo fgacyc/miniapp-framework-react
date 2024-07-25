@@ -7,7 +7,7 @@ import instagramLogo from '@/assets/instagram.png'
 import {capitalizeAllFirstLetters} from "@/components/tools.js";
 import {useTranslation} from "react-i18next";
 import {useUserStore} from "@/store/user-store.js";
-import NavBar from "@/pages/framework/nav-bar.jsx";
+import NavBar from "@/components/nav-bar.jsx";
 
 export default function About() {
     const navigate = useNavigate();
